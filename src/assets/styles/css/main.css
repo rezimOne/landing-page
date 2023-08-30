@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+#app {
+  width: 94vw;
+  margin: 0 auto;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
