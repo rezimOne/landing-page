@@ -67,11 +67,10 @@ const handleModalStatus = (): void => {
   }
 
   .navigation {
+    list-style: none;
     display: flex;
     flex-direction: row;
-    list-style: none;
-    padding: 0;
-    justify-content: space-evenly;
+    gap: $base-space-16;
   }
 
   .navigation-item {
@@ -92,12 +91,13 @@ const handleModalStatus = (): void => {
 
   .logo {
     width: 42px;
-    margin: 0 $base-space-64;
+    margin-left: $base-space-48;
+    margin-right: $base-space-32;
   }
 
   .social-icons {
     position: absolute;
-    right: $base-space-64;
+    right: $base-space-48;
     display: flex;
     align-items: center;
     gap: $base-space-16;
@@ -132,21 +132,28 @@ const handleModalStatus = (): void => {
 
 @media only screen and (max-width: 768px) {
   .navigation {
-    position: fixed;
-    width: 94vw;
-    top: -100%;
-    justify-content: center;
+    position: absolute;
+    top: $base-space-64;
+    display: flex;
+    flex-direction: column !important;
+    right: -100%;
     background: $base-color-white;
     box-shadow: 0px 8px 5px -4px rgba(66, 68, 90, 0.25);
-    border-radius: 0 0 $base-border-radius-24 $base-border-radius-24;
-    text-align: center;
+    border-radius: 0 0 0 $base-border-radius-8;
     transition: 0.5s;
+    justify-content: space-between !important;
   }
   .navigation.open {
-    top: calc($base-space-64 + $base-space-8);
+    right: 0;
   }
   .navigation-item {
-    margin: $base-space-16 0;
+    border-radius: 0 !important;
+  }
+
+  .navigation-item:hover {
+    box-shadow: none !important;
+    background-color: $base-color-red;
+    color: $base-color-white;
   }
   .hamburger {
     display: block;
